@@ -4,7 +4,7 @@
       <span class="navbar-toggler-icon" (click)="toggleCollapseNavbar()"></span>
     </button>
   
-    <div class="collapse navbar-collapse" [class.show]="collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" [class.show]="isCollapsed === true" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" *ngFor="let categorie of categories">
           <a class="nav-link" href="#"> {{ categorie.name }} </a>
