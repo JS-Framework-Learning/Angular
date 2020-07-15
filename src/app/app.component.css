@@ -1,0 +1,11 @@
+li {
+    cursor: pointer;
+}
+
+main {
+    position: absolute;
+    top: 15%;
+    left: 40%;
+
+    width: auto;
+}

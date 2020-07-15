@@ -1,0 +1,7 @@
+<div *ngIf="selectedPizza"> <!-- *ngIf permet de créer une condition IF -->
+    <p> {{ selectedPizza.name }} </p>
+    <p> {{ selectedPizza.price }} </p>
+  
+    <input [(ngModel)]="selectedPizza.name"> <!-- ngModel permet de lier la variable au module Model -->
+</div>
+<p>blablabla</p>
