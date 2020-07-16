@@ -1,1 +1,6 @@
-<p>ingredient-list works!</p>
+<ul>
+    <li *ngFor="let ingredient of ingredients">
+        {{ ingredient.name }}
+        <img [src]="'../assets/images/ingredients/' + ingredient.image" width="70" alt="ingredient.name">
+    </li>
+</ul>
