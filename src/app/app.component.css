@@ -37,3 +37,14 @@ h2 {
     color: rgb(19, 180, 54);
 }
 
+#img-slide {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+
+    width: 2000px;
+    height: 600px;
+}
+
+

@@ -8,6 +8,7 @@ import { AuthorComponent } from './author/author.component';
 import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
 import { MenuComponent } from './menu/menu.component';
 import { RecetteComponent } from './recette/recette.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RecetteComponent } from './recette/recette.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule // on ajoute l'importation du module 
+    FormsModule,
+    NgbModule // on ajoute l'importation du module 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ h2 {
 
 #author {
     position: fixed;
+    bottom: 100px;
 }
 
 .stars > i {

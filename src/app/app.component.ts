@@ -69,6 +69,17 @@ const CATEGORIES: Menu[] = [
   {id: 3, name: 'Ingredient'},
 ]
 
+export class Slide {
+  id: number;
+  name: string;
+}
+
+const SLIDES: Slide[] = [
+  {id: 1, name: 'slide2.jpg'},
+  {id: 2, name: 'slide3.jpg'},
+  {id: 3, name: 'slide4.png'},
+]
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -86,6 +97,7 @@ export class AppComponent {
   recettes = RECETTES;
   user = AUTHORS[0];
   categories = CATEGORIES;
+  slides = SLIDES;
 
   // Déclaration de services 
   constructor(private pizzaService: PizzaService) {}
