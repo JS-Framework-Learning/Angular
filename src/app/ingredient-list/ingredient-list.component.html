@@ -1,6 +1,10 @@
-<ul>
-    <li *ngFor="let ingredient of ingredients">
-        {{ ingredient.name }}
-        <img [src]="'../assets/images/ingredients/' + ingredient.image" width="70" alt="ingredient.name">
-    </li>
-</ul>
+<div class="row">
+    <div class="col-3" *ngFor="let ingredient of ingredients" (click)="selectedIngredient.emit(ingredient)">
+        <ul>
+            <li>
+                {{ ingredient.name }}
+                <img [src]="'../assets/images/ingredients/' + ingredient.image" width="70" alt="ingredient.name">
+            </li>
+        </ul>
+    </div>
+</div>

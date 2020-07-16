@@ -11,13 +11,14 @@
     <div class="row py-4" *ngIf="selectedPizza">
         <div class="col-lg-8">
             <app-pizza [selectedPizza]="selectedPizza"></app-pizza>
-            <app-ingredient-list [ingredients]="ingredients"></app-ingredient-list>
+            <app-ingredient-list [ingredients]="ingredients" (selectedIngredient)="addIngredient($event)"></app-ingredient-list>
+            <span *ngIf="selectedPizza.ingredient">Vous avez cliqué sur {{ selectedPizza.ingredient.name}} </span>
         </div>
     </div>
     <div class="row">
         <div class="col-3" *ngFor="let pizza of pizzas">
             <div class="card" (click)="onSelect(pizza)" [class.selected]="selectedPizza === pizza">
-
+                    
                 <img [src]="'../assets/images/pizzas/' + pizza.image" class="card-img" alt="pizza.name">
 
                 <div class="card-body">
@@ -27,6 +28,23 @@
             </div>
         </div>
     </div>
+  
+    <app-recette [recettes]="recettes"></app-recette>
 
+    <h2> Liste des ingrédients </h2>
+
+    <div class="row">
+        <div class="col-3" *ngFor="let ingredient of ingredients">
+            <div class="card">
+                    
+                <img [src]="'../assets/images/ingredients/' + ingredient.image" class="card-img" alt="ingredient.name">
+
+                <div class="card-body">
+                    <h5 class="card-title"> {{ ingredient.name }} </h5>
+                    <p>{{ ingredient.price }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 

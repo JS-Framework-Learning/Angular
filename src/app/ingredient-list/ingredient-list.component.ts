@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IngredientList } from '../app.component';
 
 @Component({
@@ -9,6 +9,9 @@ import { IngredientList } from '../app.component';
 export class IngredientListComponent implements OnInit {
 
   @Input() ingredients: IngredientList;
+  //on créer un objet EventEmiiter pour nous permettre d'emettre un évenement
+  // à partir du composant. On pourra écouter cet événement par la suite.
+  @Output() selectedIngredient: EventEmitter<IngredientList> = new EventEmitter();
 
   constructor() { }
 

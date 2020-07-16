@@ -1,3 +1,15 @@
-h1, h2 {
-    color: pink;
+h1 {
+    color: rgb(54, 54, 54);
+}
+
+h2 {
+    color:  rgb(231, 48, 24);
+}
+
+#author {
+    position: fixed;
+}
+
+.stars > i {
+    color:  rgb(231, 48, 24);
 }
