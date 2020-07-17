@@ -1,0 +1,44 @@
+.container {
+    padding-bottom: 70px;
+}
+
+#img-slide {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+
+    width: 2000px;
+    height: 600px;
+}
+
+h2 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: rgb(19, 180, 54);
+}
+
+li {
+    cursor: pointer;
+}
+
+img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+
+    height: 250px;
+}
+
+.card-img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card:hover {
+    color: rgb(231, 48, 24);
+    opacity: 0.7;
+    transition: all 0.2s;
+}

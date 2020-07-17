@@ -38,7 +38,7 @@ export class IngredientList {
   image: string;
 }
 
-const INGREDIENTS: IngredientList[] = [
+ export const INGREDIENTS: IngredientList[] = [
   {id: 1, name: 'Banana', type: 'Fruit', image: 'banana.png'},
   {id: 2, name: 'Tomato', type: 'Legume', image: 'tomato.jpg'},
   {id: 3, name: 'Ananas', type: 'Fruit', image: 'ananas.jpg'},
@@ -50,7 +50,7 @@ export class Recette {
   step: string;
 }
 
-const RECETTES: Recette[] = [
+export const RECETTES: Recette[] = [
   {id: 1, step: 'Verser la farine dans un saladier, y creuser un puits et ajouter eau et sel. Mélanger à la spatule en ajoutant l\'huile d\'olive'},
   {id: 2, step: 'Dans un petit bol, faire fondre la levure dans un peu d\'eau tiède avec 1 pincée de sucre puis l\'ajouter en dernier'},
   {id: 3, step: 'Malaxer jusqu\'à rendre la pâte homogène et faire une boule qui se détache des parois. Note : si besoin ajuster la quantité d\'eau si la pâte est un peu dure en en rajoutant quelques gouttes au fur et à mesure car la quantité exacte dépend de la farine'},
@@ -64,9 +64,10 @@ export class Menu {
 }
 
 const CATEGORIES: Menu[] = [
-  {id: 1, name: 'Pizza'},
-  {id: 2, name: 'Recettes'},
-  {id: 3, name: 'Ingredient'},
+  {id: 1, name: 'accueil'},
+  {id: 2, name: 'menu'},
+  {id: 3, name: 'recettes'},
+  {id: 4, name: 'contact'}
 ]
 
 export class Slide {
@@ -74,7 +75,7 @@ export class Slide {
   name: string;
 }
 
-const SLIDES: Slide[] = [
+export const SLIDES: Slide[] = [
   {id: 1, name: 'slide2.jpg'},
   {id: 2, name: 'slide3.jpg'},
   {id: 3, name: 'slide4.png'},
@@ -99,20 +100,30 @@ export class AppComponent {
   categories = CATEGORIES;
   slides = SLIDES;
 
-  // Déclaration de services 
-  constructor(private pizzaService: PizzaService) {}
+ 
 
-  ngOnInit() { //équivalent au .onDocument ready()
-    this.pizzaService.getPizzas().then(pizzas => this.pizzas = pizzas);
-  }
+  //construction d'un tableau d'éléments avec sélection random 
 
-  onSelect(pizza: Pizza) { // on déclare un évenement 
-    this.selectedPizza = pizza; // ici on peut manipuler notre objet
-  }
+  // ngOnInit() {
+  //   let pizzas = [1, 2, 3, 4, 5]; on initialise un tableau contenant nos éléments
+  //   let newPizzas = []; on initialise un tableau vide
 
-  addIngredient(ingredient) {
-    this.selectedPizza.ingredient = ingredient;
-  }
+  //   for(let i = 0; i < 3; i++){ on boucle sur le nombre de pizzas que nous voulons
+  //     let randomIndex = Math.floor(Math.random() * 5); on récupère un chiffre random arrondi à l'entier
+  //     newPizzas.push(pizzas[randomIndex]); on push dans notre tableau vide, les éléments du tableau pizzas[au nombre random : randomIndex]
+  //   }
+  // }
+
+  //second exemple plus court 
+
+  // ngOnInit() {
+  //   let pizzas = [1, 2, 3, 4, 5]; on initialise un tableau contenant nos éléments
+  
+  //   pizzas = pizzas 
+  //     .sort(() => 0.5 - Math.random())
+  //     .slice(0, 3);
+
+  // }
 
   
 }

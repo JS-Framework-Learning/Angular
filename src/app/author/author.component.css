@@ -1,5 +1,10 @@
+* {
+    text-align: center;
+}
+
 h1 {
     color: rgb(54, 54, 54);
+    padding-top: 10px;
 }
 
 h2 {
@@ -9,6 +14,10 @@ h2 {
 #author {
     position: fixed;
     bottom: 100px;
+    background-color: white;
+    border: 3px solid white;
+    width: 200px;
+    height: auto;
 }
 
 .stars > i {

@@ -8,7 +8,23 @@
         <div class="collapse navbar-collapse" [class.show]="isCollapsed === true" id="navbarSupportedContent"> 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" *ngFor="let categorie of categories">
-                    <a class="nav-link" href="#"> {{ categorie.name }} </a>
+                    <a class="nav-link text-capitalize" [routerLink]="'/' + categorie.name" routerLinkActive="active"> {{ categorie.name }} </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-3" ngbDropdown>
+                    <button class="btn btn-outline-light" ngbDropdownToggle><i class="fa fa-cog mr-2" aria-hidden="true"></i></button>
+                    <div class="dropdown-menu" ngbDropdownMenu>
+                      <button ngbDropdownItem>Mes paiements</button>
+                      <button ngbDropdownItem>Mes commandes</button>
+                      <button ngbDropdownItem>Mon compte</button>
+                    </div>
+                </li>
+                <li class="nav-item" ngbDropdown>
+                    <button class="btn btn-outline-light" ngbDropdownToggle><i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                    <div class="dropdown-menu" ngbDropdownMenu>
+                      <p ngbDropdownItem>Votre panier est vide.</p>
+                    </div>
                 </li>
             </ul>
         </div>

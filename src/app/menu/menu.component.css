@@ -1,3 +1,7 @@
 #navbar {
     background-color:  rgb(231, 48, 24);
 }
+
+.nav-item > button {
+    border: none;
+}

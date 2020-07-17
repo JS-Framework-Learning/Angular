@@ -6,11 +6,15 @@ import { PIZZAS, Pizza } from '../app.component'; //on vient implémenter noter 
 })
 
 export class PizzaService {
-        getPizzas(): Promise<Pizza[]> { //on recupère le tableau de stocké dans notre constante 
-        return Promise.resolve(PIZZAS); //on retourne notre constante
+
+    getPizzas(): Promise<Pizza[]> { //on recupère le tableau de stocké dans notre constante 
+    return Promise.resolve(PIZZAS); //on retourne notre constante
     }
+
     //ici on simule un serveur qui répond en 2sec
     getPizzasSlowly(): Promise<Pizza[]> {
         return new Promise(resolve => setTimeout(() => resolve(this.getPizzas()), 2000 ));
     }
+
+    
 }
