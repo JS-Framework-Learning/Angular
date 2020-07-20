@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-// Déclaration de services 
-import { PizzaService } from './services/pizza.service';
 
 // Importation de classes
 

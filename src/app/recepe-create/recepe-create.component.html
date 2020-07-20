@@ -1,0 +1,38 @@
+<h2> Créer ta pizza !</h2>
+
+<div id="div-form"></div>
+
+<div id="create-form">
+
+    <mat-form-field style="width: 100%">
+        <mat-label>Nom</mat-label>
+        <input matInput [(ngModel)]="pizza.name">
+    </mat-form-field>
+    <br>
+    <mat-form-field style="width: 100%">
+        <mat-label>Prix</mat-label>
+        <input matInput [(ngModel)]="pizza.price">
+    </mat-form-field>
+
+    
+    <div class="row py-4" *ngIf="selectedPizza">
+        <div class="col-lg-8">
+            
+            <app-ingredient-list [ingredients]="ingredients" (selectedIngredient)="addIngredient($event)"></app-ingredient-list>
+            <span *ngIf="selectedPizza.ingredient">Vous avez cliqué sur {{ selectedPizza.ingredient.name}} </span>
+        </div>
+    </div>
+    <!-- <mat-form-field style="width: 100%">
+        <mat-label>Quelle taille ?</mat-label>
+        <mat-select [(ngModel)]="recepe-create.size">
+        <mat-option value="small">small</mat-option>
+        <mat-option value="medium">medium</mat-option>
+        <mat-option value="large">large</mat-option>
+        <mat-option value="very very large">very very large</mat-option>
+        </mat-select>
+    </mat-form-field> -->
+    <div class="text-center mt-4">
+        <button mat-raised-button class="btn btn-danger" (click)="send()">Go !</button>
+    </div>
+
+</div>  

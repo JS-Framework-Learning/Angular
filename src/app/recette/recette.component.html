@@ -1,22 +1,28 @@
-<h2>Pâte à pizza</h2>
+<div class="container">
 
-<div id="recette" class="col-8 pt-5" *ngFor="let recette of recettes">
-    <ul>
-        <li>
-            {{ recette.step }}
-        </li>
-    </ul>
-</div>
+    <h2>Pâte à pizza</h2>
 
-<!-- rate this receape -->
-<div class="rate">
-    <div class="form-group">
-        <ngb-rating [formControl]="ctrl"></ngb-rating>
-        <div class="form-text small">
-          <div *ngIf="ctrl.valid" class="text-success">Thanks!</div>
-          <div *ngIf="ctrl.invalid" class="text-danger">Please rate us</div>
+    <div id="recette" class="col-8 pt-5" *ngFor="let recette of recettes">
+        <ul>
+            <li>
+                {{ recette.step }}
+            </li>
+        </ul>
+    </div>
+
+    <!-- rate this receape -->
+    <div class="rate">
+        <div class="form-group">
+            <ngb-rating [formControl]="ctrl"></ngb-rating>
+            <div class="form-text small">
+            <div *ngIf="ctrl.valid" class="text-success">Thanks!</div>
+            <div *ngIf="ctrl.invalid" class="text-danger">Please rate us</div>
+            </div>
         </div>
     </div>
+
+    <app-recepe-create></app-recepe-create>
+
 </div>
 
 

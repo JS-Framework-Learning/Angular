@@ -1,0 +1,17 @@
+{
+  "contacts": [
+    {
+      "email": "emilie.vllr@gmail.com",
+      "subject": "Choisis ta pizza",
+      "message": "un 4 fro bordel",
+      "id": 1
+    }
+  ],
+
+  "pizzas": [
+    {"id": 1, "name": "Reine", "price": 12, "image": "reina.jpeg"},
+    {"id": 2, "name": "4 Fromages", "price": 10, "image": "fromage.jpg"},
+    {"id": 3, "name": "Orientale", "price": 13, "image": "orientale.jpg"},
+    {"id": 4, "name": "Capricioza", "price": 15, "image": "capriozia.jpg"}
+  ]
+}

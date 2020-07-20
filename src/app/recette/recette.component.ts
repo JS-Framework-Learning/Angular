@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Recette } from '../app.component';
-
+import { RECETTES } from '../app.component';
 import { FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-recette',
@@ -10,21 +10,24 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class RecetteComponent implements OnInit {
 
-  ctrl = new FormControl(null, Validators.required);
+    constructor(private http: HttpClient) {}
 
-  toggle() {
-    if (this.ctrl.disabled) {
-      this.ctrl.enable();
-    } else {
-      this.ctrl.disable();
+    recettes = RECETTES;
+   
+    // rate stars system
+    ctrl = new FormControl(null, Validators.required);
+
+    toggle() {
+
+        if (this.ctrl.disabled) {
+            this.ctrl.enable();
+        } else {
+            this.ctrl.disable();
+        }
     }
-  }
 
-  @Input() recettes: Recette;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    
+    }
 
 }

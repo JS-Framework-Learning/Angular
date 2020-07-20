@@ -1,10 +1,18 @@
+//implémentation des modules de gestions
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
+// implémentation des modules d'Angular Material
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
+// implémentation des composants
 import { AppComponent } from './app.component';
 import { PizzaComponent } from './pizza/pizza.component';
 import { AuthorComponent } from './author/author.component';
@@ -16,6 +24,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecepeCreateComponent } from './recepe-create/recepe-create.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     HomePageComponent,
     ContactPageComponent,
+    RecepeCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +48,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
       { path: '', redirectTo: 'accueil', pathMatch: 'full'},
       { path: 'accueil', component: HomePageComponent }, //déclaration de route sur component HomePage
-      { path: 'contact', component: ContactPageComponent } //déclaration de la page contact 
+      { path: 'contact', component: ContactPageComponent }, //déclaration de la page contact 
+      { path: 'recettes', component: RecetteComponent } //déclaration de la page recettes 
     ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatStepperModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
